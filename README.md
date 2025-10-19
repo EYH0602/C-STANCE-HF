@@ -1,26 +1,34 @@
+# C-STANCE-HF
+
+This repo contains scripts that uploads the origional C-STANCE dataset to huggingface.
+
+## Summary of Changes
+1. I changed all "Target 1" and "Stance 1" to "Target" and "Stance", since there is only one target and stance in each data entry.
+
 # C-STANCE
+
 This is the repository for our ACL2023 main conference paper: "C-STANCE: A Large Dataset for Chinese Zero-Shot Stance Detection".
 
 In this work:
-1. We present C-STANCE, the first large Chinese zero-shot stance detection (ZSSD) dataset. Our dataset is composed of __48,126__ annotated microblog-target pairs. C-STANCE is more than 2.5 times larger than the English zero-shot stance detection dataset (VAST) and more than 16 times larger than the existing Chinese stance detection dataset.
+
+1. We present C-STANCE, the first large Chinese zero-shot stance detection (ZSSD) dataset. Our dataset is composed of **48,126** annotated microblog-target pairs. C-STANCE is more than 2.5 times larger than the English zero-shot stance detection dataset (VAST) and more than 16 times larger than the existing Chinese stance detection dataset.
 
 2. We include two practical yet challenging ZSSD subtasks:<br />
-    __Target-based zero-shot stance detection (subtask A)__, where stance detection classifiers are evaluated using a large number of completely unseen targets.<br />
-    __Domain-based zero-shot stance detection (subtask B)__, where stance detection classifiers are evaluated using a large number of unseen targets from completely new domains.
+   **Target-based zero-shot stance detection (subtask A)**, where stance detection classifiers are evaluated using a large number of completely unseen targets.<br />
+   **Domain-based zero-shot stance detection (subtask B)**, where stance detection classifiers are evaluated using a large number of unseen targets from completely new domains.
 
-4. We consider a more diverse set of targets (40k distinct targets in total) including both __noun phrases__ and __claims__ in C-STANCE as well as multiple targets per input text.
+3. We consider a more diverse set of targets (40k distinct targets in total) including both **noun phrases** and **claims** in C-STANCE as well as multiple targets per input text.
 
-5. Data from C-STANCE covers a comprehensive range of domains, including:<br />
-    新冠疫情 (covid epedemic)<br />
-    世界事件 (word event)<br />
-    文化教育 (culture and education)<br />
-    娱乐和消费 (entertainment and consumption)<br />
-    体育 (sports)<br />
-    权益 (rights)<br />
-    环保 (environmental protection)<br />
+4. Data from C-STANCE covers a comprehensive range of domains, including:<br />
+   新冠疫情 (covid epedemic)<br />
+   世界事件 (word event)<br />
+   文化教育 (culture and education)<br />
+   娱乐和消费 (entertainment and consumption)<br />
+   体育 (sports)<br />
+   权益 (rights)<br />
+   环保 (environmental protection)<br />
 
-
-You can find the data in the __./c_stance_dataset__ folder for subtaskA and subtaskB.
+You can find the data in the **./c_stance_dataset** folder for subtaskA and subtaskB.
 
 For subtaskB, each folder represents a dataset splits where data from one left-out domain (the zero-shot domain) are used for testing, while data from the rest six domains are used for training/validation.
 
@@ -29,6 +37,7 @@ For subtaskB, during training/validation, please filter out rows where "In Use"=
 The baseline pre-trained language models that we considered in our paper are from the [CLUE benchmark](https://github.com/CLUEbenchmark/CLUE)
 
 Please cite us:
+
 ```
 @inproceedings{zhao-etal-2023-c,
     title = "{C}-{STANCE}: A Large Dataset for {C}hinese Zero-Shot Stance Detection",
