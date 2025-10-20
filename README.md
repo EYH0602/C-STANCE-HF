@@ -4,6 +4,13 @@ This repo contains scripts that uploads the origional C-STANCE dataset to huggin
 
 ## Summary of Changes
 1. I changed all "Target 1" and "Stance 1" to "Target" and "Stance", since there is only one target and stance in each data entry.
+2. Added a deduplicated Subtask B post-processing and upload workflow.
+
+## Usage
+- Subtask A: `python3 upload_c_stance_A.py`
+- Subtask B (deduplicated global splits):
+  1. `python3 scripts/postprocess_subtaskB.py` to build `data/subtaskB_combined`.
+  2. `python3 upload_c_stance_B.py` to push the combined train/validation/test splits. Add `--no-filter-in-use` if you want to keep rows where `In Use == 0`, and `--private True` on either uploader to publish privately.
 
 # C-STANCE
 
