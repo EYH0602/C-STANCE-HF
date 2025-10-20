@@ -11,7 +11,7 @@ def main(c_stance_A_dir: str = "data/subtaskA"):
     data_files = {
         "train": join(c_stance_A_dir, "raw_train_all_onecol.csv"),
         "test": join(c_stance_A_dir, "raw_test_all_onecol.csv"),
-        "val": join(c_stance_A_dir, "raw_val_all_onecol.csv"),
+        "validation": join(c_stance_A_dir, "raw_val_all_onecol.csv"),
     }
 
     dataset = load_dataset("csv", data_files=data_files)
