@@ -12,6 +12,23 @@ This repo contains scripts that uploads the origional C-STANCE dataset to huggin
   1. `python3 scripts/postprocess_subtaskB.py` to build `data/subtaskB_combined`.
   2. `python3 upload_c_stance_B.py` to push the combined train/validation/test splits. Add `--no-filter-in-use` if you want to keep rows where `In Use == 0`, and `--private True` on either uploader to publish privately.
 
+## Access on Hugging Face
+The datasets are available on the Hub as:
+- `yfhe/C-STANCE-A`
+- `yfhe/C-STANCE-B`
+
+```python
+from datasets import load_dataset
+
+# Subtask A
+subtask_a = load_dataset("yfhe/C-STANCE-A")
+
+# Subtask B (deduplicated global splits: train, validation, test)
+subtask_b = load_dataset("yfhe/C-STANCE-B")
+```
+
+`subtask_b` contains the deduplicated union of all domains with the same schema as the original CSV files. If you need the leave-one-domain-out view, regenerate the per-domain splits locally from the original `data/subtaskB` folders.
+
 # C-STANCE
 
 This is the repository for our ACL2023 main conference paper: "C-STANCE: A Large Dataset for Chinese Zero-Shot Stance Detection".
